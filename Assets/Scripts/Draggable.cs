@@ -16,7 +16,7 @@ public class Draggable : MonoBehaviour
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
         rb.useGravity = false;
-        rb.velocity = Vector3.zero; // Stop current movement
+        rb.velocity = Vector3.zero; 
     }
 
     void OnMouseDrag()
@@ -24,7 +24,6 @@ public class Draggable : MonoBehaviour
         if (isDragging)
         {
             Vector3 newPos = GetMouseWorldPosition() + offset;
-            // Only allow movement on X & Y (lock Z or set as needed)
             newPos.z = 0;
             transform.position = newPos;
         }

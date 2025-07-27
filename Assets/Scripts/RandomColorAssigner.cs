@@ -6,7 +6,7 @@ public class RandomColorAssigner : MonoBehaviour
 {
     public Color[] colors;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         if(colors.Length != null && colors.Length > 0)

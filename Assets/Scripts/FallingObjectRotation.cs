@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class FallingObjectRotation : MonoBehaviour
 {
-    public float rotationSpeed = 90f;  // Rotation speed in degrees per second
+    public float rotationSpeed = 90f;  
 
     void Update()
     {
-        // Rotate around the Y axis for a dynamic look
         transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
     }
 }

@@ -4,14 +4,14 @@ using System.Collections;
 public class Bin : MonoBehaviour
 {
     public ParticleSystem celebrationParticles;
-    public Color binColor;                  // Set in Inspector
-    public GameManager gameManager;         // Drag GameManager here, or use FindObjectOfType
-    public Renderer binRenderer; // Assign in Inspector (MeshRenderer on bin object)
+    public Color binColor;                  
+    public GameManager gameManager;         
+    public Renderer binRenderer; 
     public Color glowColor = Color.yellow;
     public float glowDuration = 0.2f;
-    public Color pulseColor = Color.yellow; // Glow color for pulse
-    public float pulseDuration = 0.2f;     // Pulse time (seconds)
-    public int pulseCount = 1; // Number of pulses
+    public Color pulseColor = Color.yellow; 
+    public float pulseDuration = 0.2f;     
+    public int pulseCount = 1; 
 
     void Awake()
     {
@@ -21,7 +21,7 @@ public class Bin : MonoBehaviour
 
     public bool CheckMatch(Color objectColor)
 {
-    float threshold = 0.1f; // Adjust for strictness of matching
+    float threshold = 0.1f; 
     return Mathf.Abs(objectColor.r - binColor.r) < threshold &&
            Mathf.Abs(objectColor.g - binColor.g) < threshold &&
            Mathf.Abs(objectColor.b - binColor.b) < threshold;
@@ -43,21 +43,15 @@ public class Bin : MonoBehaviour
                 celebrationParticles.Play();
             PlayPulse();
 
-            // Optional short destroy delay to avoid race condition
+           
             Destroy(other.gameObject, 0.05f);
         }
         else
         {
-            // Uncomment if you want penalty on wrong bins
-            // gameManager.DecreaseLives(1);
-
             Destroy(other.gameObject, 0.05f);
         }
     }
 }
-
-
-
 
     public void PlayGlow()
     {

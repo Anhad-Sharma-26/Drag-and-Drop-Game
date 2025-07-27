@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int lives = 3;
 
-    public Text scoreText;           // Assign your Score UI Text here
-    public Text livesText;           // Assign your Lives UI Text here
-    public GameObject gameOverPanel; // Assign your Game Over UI Panel here
+    public Text scoreText;           
+    public Text livesText;           
+    public GameObject gameOverPanel; 
 
     private bool isGameOver = false;
 
